@@ -32,6 +32,12 @@ pip install --upgrade pip
 pip install git+https://github.com/ribbon/ribbon.git
 ```
 
+If you want to use the jupyter notebook, you need to install it and add the virtual environment as a kernel
+```console
+pip install jupyter notebook
+python -m ipykernel install --user --name=cymetric
+```
+
 ### 3. Install within Sage
 Since Sage comes with python, all you need to do is run 
 ```console
@@ -56,13 +62,13 @@ If you prefer to work with a ipython notebook (either within python or sage), yo
 The main class is the RandomWalker class. At the moment, it is closed source, but we will open source it soon. It takes the following arguments:
 ```
 Args:
-	links (list)                   : list of links to check whether they are ribbon
-	max_size (int)                 : maximum number of crossings
-	max_steps (int)                : maximum number of steps. Roughly, each crossed arc corresponds to one step.
-	max_bct (int)                  : max number of twists, or components, or number of bands that we allow before for a knot (note that bands and components are correlated if the starting object is a knot)
-	logger (logging.logger)        : logger to print info. If None, a logger will be created
-	use_band_checks (bool)         : Set to True to check some known obstructions to sliceness after adding a band. Note this can be slower than omitting this step for large knots since some knot invariants (like the Alexander Polynomial) are quite computationally expensive.
-	save_solved_knot_images (bool) : Set to True to save images that illustrate the bands (for verification).
+    links (list)                   : list of links to check whether they are ribbon
+    max_size (int)                 : maximum number of crossings
+    max_steps (int)                : maximum number of steps. Roughly, each crossed arc corresponds to one step.
+    max_bct (int)                  : max number of twists, or components, or number of bands that we allow before for a knot (note that bands and components are correlated if the starting object is a knot)
+    logger (logging.logger)        : logger to print info. If None, a logger will be created
+    use_band_checks (bool)         : Set to True to check some known obstructions to sliceness after adding a band. Note this can be slower than omitting this step for large knots since some knot invariants (like the Alexander Polynomial) are quite computationally expensive.
+    save_solved_knot_images (bool) : Set to True to save images that illustrate the bands (for verification).
 Returns:
     A new RandomWalker class instance
 ```

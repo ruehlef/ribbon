@@ -1,5 +1,6 @@
+numpy
+plink
 snappy
 spherogram
-plink
-numpy
 tk
+wheel

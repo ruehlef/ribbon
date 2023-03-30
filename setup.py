@@ -12,6 +12,7 @@ with open("requirements.txt", "r") as fh:
 setuptools.setup(
     name="ribbon",
     version=VERSION,
+    python_requires = '>=3.8',
     author="Sergei Gukov, Jim Halverson, Ciprian Manolescu, Fabian Ruehle",
     author_email="f.ruehle@northeastern.edu",
     description="A python program that detects ribbon knots",
@@ -24,5 +25,7 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: Linux, MacOS",
         "Topic :: Scientific/Engineering :: Mathematics"
+        ],
     install_requires=REQUIREMENTS,
+    package_data={'ribbon': ['*.pyc']},
 )

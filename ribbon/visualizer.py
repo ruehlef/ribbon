@@ -10,16 +10,6 @@ import tkinter
 
 def custom_shift(self, dx, dy):
     pass
-    # for vertex in self.Vertices:
-    #     vertex.x += dx
-    #     vertex.y += dy
-    #self.canvas.move('transformable', dx, dy)
-    # for livearrow in (self.LiveArrow1, self.LiveArrow2):
-    #     if livearrow:
-    #         x0,y0,x1,y1 = self.canvas.coords(livearrow)
-    #         x0 += dx
-    #         y0 += dy
-    #         self.canvas.coords(livearrow, x0, y0, x1, y1)
 
 def custom_update_info(self):
     #self.style_var.set("pl")
@@ -195,9 +185,3 @@ def visualize(L, filename, band_string = "", k=20, bump=1):
     #ulx, uly, lrx, lry = viewer.canvas.bbox("transformable")
     #viewer.canvas.postscript(file=filename, x=ulx, y=uly, width=lrx-ulx, height=lry-uly, pagewidth=500)
     viewer.save_as_eps(filename)
-
-if __name__ == "__main__":
-    #ef2c = visualize(snappy.Link("3_1"))
-    LINKS = [[(9, 53, 10, 52), (20, 52, 21, 51), (10, 22, 11, 21), (11, 30, 12, 31), (31, 12, 32, 13), (22, 29, 23, 30), (32, 23, 33, 24), (50, 14, 51, 13), (49, 25, 50, 24), (25, 49, 26, 48), (26, 33, 27, 34), (59, 29, 60, 28), (27, 59, 28, 58), (60, 53, 61, 54), (34, 58, 35, 57), (47, 56, 48, 57), (55, 46, 56, 47), (54, 36, 55, 35), (8, 61, 9, 0), (45, 14, 46, 15), (36, 16, 37, 15), (16, 8, 17, 7), (3, 6, 4, 7), (37, 4, 38, 5), (5, 38, 6, 39), (2, 18, 3, 17), (44, 40, 45, 39), (18, 43, 19, 44), (40, 19, 41, 20), (1, 43, 2, 42), (41, 1, 42, 0)]]
-    visualize(snappy.Link(LINKS[0]),'myfile.svg', band_string = "fabian's super long string with lots of info that I need to keep writing so that I trigger the break fabian's super long string with lots of info that I need to keep writing so that I trigger the break")
-    #for k in piecewise_linear_embedding(snappy.Link("4_1")): print(k)

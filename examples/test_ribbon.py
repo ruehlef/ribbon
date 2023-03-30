@@ -48,7 +48,7 @@ if __name__ == "__main__":
     parser.add_argument('--file', help='path to file with link info to process. One line per link (can specify name, PD code, or braid word)')
     parser.add_argument('--links', nargs='*', help='sequence of links, either given by their names or as a list of PD codes (separated by spaces)')
     parser.add_argument('--max-bands', default=5, type=int, help='max number of bands/twists/components (we use the same upper bound for all of these instead of allowing for individual upper bounds) that should be tried to add. Default: 5')
-    parser.add_argument('--max-size', default=None, type=int, help='Maximum number of faces of the dual graph. This needs to be at least C+2, where C is the number of crossings. If omitted, C_max+3 will be used')
+    parser.add_argument('--max-size', default=None, type=int, help='Maximum number of crossings. If ommited, num_crossings+1 will be used')
     parser.add_argument('--max-steps', default=50, type=int, help='Max number of steps for each knot. Roughly, each crossed arc corresponds to one step. Default: 50')
     parser.add_argument('--max-tries', default=1000, type=int, help='Max number of resets for each knot. Set to -1 for infinite tries. Default: 1000')
     parser.add_argument('--use-checks', default=False, action='store_true', help='if flag is set, will check for slice obstructions (signature, alexander poly, fox-milnor,...). This requires sage')
@@ -101,23 +101,22 @@ if __name__ == "__main__":
             new_crossing_num = len(snappy.Link(x))
             if new_crossing_num > max_size:
                 max_size = new_crossing_num
-        max_size += 3
+        max_size += 1
     else:
         max_size = int(args.max_size)
-
+    
     if args.use_checks and len(my_links) > 1:
         my_links = [my_links[0]]
         logger.warning("the flag --use-checks can only be used with a single knot. Running the RW on knot {}".format(my_links[0]))
         
-    USE_ALTERNATIVE_LABELING = True
-    random_walker = ribbon.rw.RandomWalker(links=my_links, max_size=max_size, max_bct=args.max_bands, logger=logger, log_level=log_level, use_band_checks=args.use_checks, save_solved_knot_images=args.save_images)
-    random_walker.max_steps_until_reset = args.max_steps
+    random_walker = ribbon.rw.RandomWalker(links=my_links, max_size=max_size, max_steps=args.max_steps, max_bct=args.max_bands, logger=logger, log_level=log_level, use_band_checks=args.use_checks, save_solved_knot_images=args.save_images)
+    max_action_per_category = max_size + 3
 
     if eval(args.weights) == [1, 1, 1, 1, 1]:
         weights = None
     else:
         weights = eval(args.weights)
-        weights = [float(weights[0])] * max_size + [float(weights[3]), float(weights[1]), float(weights[2])] * max_size + [float(weights[4])] * 2
+        weights = [float(weights[0])] * max_action_per_category + [float(weights[3]), float(weights[1]), float(weights[2])] * max_action_per_category + [float(weights[4])] * 2
     
     num_knots, success, tries, tries_per_knot = 0, 0, 0, 0
     succeeded, failed = [], []
@@ -173,4 +172,3 @@ if __name__ == "__main__":
     logger.error("Succeeded {} times for: {}".format(success, succeeded))
     logger.error("Failed    {} times for: {}".format(len(my_links) - success, failed))
     logger.error("####################################################################################################")
-    USE_ALTERNATIVE_LABELING = False

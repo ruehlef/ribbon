@@ -69,11 +69,12 @@ Returns:
 From this class, you essentially only need the ```invalid_action_mask()``` and ```step(action)``` methods. The former returns a list, which contains a 1 for actions that are valid in the current state and a 0 for actions that are invalid. You can then choose randomly (or in an informed way, if you know which band you want to construct) an action and perform it using the ```step``` method. The step function will return a bool indicating whether it is resetting the knot. The reason for the reset is given in the second argument.
 
 ## Output 
-Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [CYMetric plots](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:
+Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [knot plot](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:
+
 * s# a#: indicates that the band is started on the strand that is crossed wehn going from the region indicated by the number that follows s to the region indicated by the number that follows a (these are acropnyms for "start" and "attach")
 * o#:    Indicates that the band is moved from the current region into the next region by crossing over the strand that is encountered
 * u#:    Indicates that the band is moved from the current region into the next region by crossing over the strand that is encountered
 *t+-:    Indicates that the band is twisted (either a positive or a negative twist)
 *a#:     Indicates that the band is attached at the strand that is crossed when leaving the current region and entering the region indicated by the number following a
 
-For the example [CYMetric plots](/assets/stevedore.png), this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6.
+For the example [knot plot](/assets/stevedore.png), this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6.

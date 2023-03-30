@@ -1,5 +1,5 @@
 # ribbon
-![CYMetric plots](/assets/stevedore.png)
+![Ribbon plots](/assets/stevedore.png)
 
 ribbon provides code that searches for ribbon bands in knots or links.
 
@@ -35,7 +35,7 @@ pip install git+https://github.com/ribbon/ribbon.git
 If you want to use the jupyter notebook, you need to install it and add the virtual environment as a kernel
 ```console
 pip install jupyter notebook
-python -m ipykernel install --user --name=cymetric
+python -m ipykernel install --user --name=ribbon-venv
 ```
 
 ### 3. Install within Sage

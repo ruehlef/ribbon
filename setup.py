@@ -27,5 +27,5 @@ setuptools.setup(
         "Topic :: Scientific/Engineering :: Mathematics"
         ],
     install_requires=REQUIREMENTS,
-    package_data={'ribbon': ['*.pyc']},
+    package_data={'ribbon': ['*.so']},
 )

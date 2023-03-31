@@ -11,7 +11,7 @@ ribbon provides code that searches for ribbon bands in knots or links.
 ## Installation
 This guide assumes that you have a working Python 3 (preferably python 3.8 or above) installation (and optionally Sage, if you want to use some features from snappy that require sage). It is assumed that running ```python3``` works on your system and runs python 3.8 or above.  Moreover, it is assumed that you have installed git. Note that both are standard on Mac and most Linux distributions. 
 
-*NOTE*: At the moment, the code is still closed source, which means that it ships with a Cython binary. I have compiled a version on Python 3.8 for Macbooks with an M1 chip and one on Ubuntu 22.04LTS. 
+*NOTE*: At the moment, the code is still closed source, which means that it ships with a Cython binary. I have compiled one version for Python 3.8-3.10 with a Macbook with an M1 chip and one with Ubuntu 22.04LTS. 
 
 ### 1. Installation with Python
 If you want to use any existing python installation (note that we recommend using a virtual environment, see below), just run in a terminal

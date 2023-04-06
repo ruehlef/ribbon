@@ -99,7 +99,7 @@ In either case, you will see the following:
 usage: test_ribbon.py [-h] [--file FILE] [--links [LINKS ...]] [--max-bands MAX_BANDS] [--max-size MAX_SIZE] [--max-steps MAX_STEPS] [--max-tries MAX_TRIES]
                       [--use-checks] [--save-images] [--verbose VERBOSE] [--weights WEIGHTS]
 
-Check for sliceness using a random walk to construct the bands.
+Check for ribbonness using a random walk to construct the bands. Note that all arguments should be entered in single quotes ''.
 
 optional arguments:
   -h, --help             show this help message and exit
@@ -115,13 +115,13 @@ optional arguments:
   --verbose VERBOSE      verbosity level: '0': only crucial info, '1': some info, '2': a lot of info, '3': everything (probably too much). Default: 1
   --weights WEIGHTS      specify relative probabilities for sampling the actions [start, attach, over, under, twist]. Need not be normalized to 1. Default: '[1.,17.,1.,1.,3.]', which was found to work well
 
-Example:
-    Find a band of link K6a3 (Stevedore)        : test_ribbon.py --links 'K6a3' --verbose 1
-    Specify some upper bounds                   : test_ribbon.py --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
-    Tries each knot 10 times                    : test_ribbon.py --links 'K6a3' --max-tries 10
-    Check sliceness obstructions for added bands: test_ribbon.py --links 'K6a3' --use-checks
-    Save bands as eps files                     : test_ribbon.py --links 'K6a3' --save-images
-    Prioritize attach, do not twist, try forever: test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
+Example (replace 'python3' by 'sage' at the beginning of each command to use sage instead):
+    Find a band of link K6a3 (Stevedore)        : python3 test_ribbon.py --links 'K6a3' --verbose 1
+    Specify some upper bounds                   : python3 test_ribbon.py --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
+    Tries each knot 10 times                    : python3 test_ribbon.py --links 'K6a3' --max-tries 10
+    Check sliceness obstructions for added bands: python3 test_ribbon.py --links 'K6a3' --use-checks
+    Save bands as eps files                     : python3 test_ribbon.py --links 'K6a3' --save-images
+    Prioritize attach, do not twist, try forever: python3 test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
 ```
 
 ### Python notebook

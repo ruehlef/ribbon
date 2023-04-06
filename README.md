@@ -32,7 +32,7 @@ pip install --user git+https://github.com/ribbon/ribbon.git
 
 3.b. If you want to use sage, you need to start it first by typing ```sage``` and pressing enter. Next copy the line 
 ```console
-pip install --user git+https://github.com/ribbon/ribbon.git
+pip install git+https://github.com/ribbon/ribbon.git
 ```
 and press enter. Once this is done, type ```exit``` and press enter
 
@@ -40,20 +40,20 @@ and press enter. Once this is done, type ```exit``` and press enter
 
 5.a. If you want to use python, run 
 ```console
-python test_ribbon.py --links 'K6a3' --save-images --max-tries -1 
+python test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
 ```
 Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
 ```console
-python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries -1 
+python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
 ```
 
 5.b. If you want to use python, run 
 ```console
-sage test_ribbon.py --links 'K6a3' --save-images --max-tries -1 
+sage test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
 ```
 Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
 ```console
-python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries -1 
+python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
 ```
 
 ### B: Standard
@@ -94,8 +94,42 @@ If you have Sage installed and followed the steps to install it for usage with S
 ```sage test_ribbon.py --help```
 Sage is only needed if you run the code with the ```--use-checks``` options, which checks the Fox-Milnor condition, which requires computing the Alexander polynomial in snappy, which in turn requires sage.
 
+In either case, you will see the following:
+```console
+usage: test_ribbon.py [-h] [--file FILE] [--links [LINKS ...]] [--max-bands MAX_BANDS] [--max-size MAX_SIZE] [--max-steps MAX_STEPS] [--max-tries MAX_TRIES]
+                      [--use-checks] [--save-images] [--verbose VERBOSE] [--weights WEIGHTS]
+
+Check for sliceness using a random walk to construct the bands.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --file FILE           path to file with link info to process. One line per link (can specify name, PD code, or braid word)
+  --links [LINKS ...]   sequence of links, either given by their names or as a list of PD codes (separated by spaces)
+  --max-bands MAX_BANDS
+                        max number of bands/twists/components (we use the same upper bound for all of these instead of allowing for individual upper bounds) that
+                        should be tried to add. Default: 5
+  --max-size MAX_SIZE   Maximum number of crossings. If ommited, num_crossings+1 will be used
+  --max-steps MAX_STEPS
+                        Max number of steps for each knot. Roughly, each crossed arc corresponds to one step. Default: 50
+  --max-tries MAX_TRIES
+                        Max number of resets for each knot. Set to -1 for infinite tries. Default: 1000
+  --use-checks          if flag is set, will check for slice obstructions (signature, alexander poly, fox-milnor,...). This requires sage
+  --save-images         if flag is set, a set of images for each ribbon knot is saved (to the same directory as this script) that shows which bands were added.
+  --verbose VERBOSE     verbosity level: '0': only crucial info, '1': some info, '2': a lot of info, '3': everything (probably too much). Default: 1
+  --weights WEIGHTS     specify relative probabilities for sampling the actions [start, attach, over, under, twist]. Need not be normalized to 1. Default:
+                        "[1.,17.,1.,1.,3.]", which was found to work well
+
+Example:
+    Find a band of link K6a3 (Stevedore)        : test_ribbon.py --links 'K6a3' --verbose 1
+    Specify some upper bounds                   : test_ribbon.py --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
+    Tries each knot 10 times                    : test_ribbon.py --links 'K6a3' --max-tries 10
+    Check sliceness obstructions for added bands: test_ribbon.py --links 'K6a3' --use-checks
+    Save bands as eps files                     : test_ribbon.py --links 'K6a3' --save-images
+    Prioritize attach, do not twist, try forever: test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
+```
+
 ### Python notebook
-If you prefer to work with a ipython notebook (either within python or sage), you can look at [test_ribbon.ipynb](/examples/ribbon_example.ipynb)
+If you prefer to work with a ipython notebook (either within python or sage), you can look at [ribbon_example.ipynb](/examples/ribbon_example.ipynb)
 
 ## Output 
 Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [knot plot](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:

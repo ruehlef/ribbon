@@ -5,8 +5,8 @@ import snappy
 import numpy as np
 import logging
 import argparse
-import ribbon.rw
-import ribbon.visualizer as visualizer
+# import ribbon.rw
+# import ribbon.visualizer as visualizer
 
 def init_logger(log_level):
     logger = logging.getLogger('RandomWalker')
@@ -37,14 +37,14 @@ def parse_string_array(links):
 
 if __name__ == "__main__":
     example_usage = '''Example:
-    Find a band of link K6a3 (Stevedore)        : random_walker --links 'K6a3' --verbose 1
-    Specify some upper bounds                   : random_walker --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
-    Tries each knot 10 times                    : random_walker --links 'K6a3' --max-tries 10
-    Check sliceness obstructions for added bands: random_walker --links 'K6a3' --use-checks
-    Save bands as eps files                     : random_walker --links 'K6a3' --save-images
-    Prioritize attach, do not twist, try forever: random_walker.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
+    Find a band of link K6a3 (Stevedore)        : test_ribbon.py --links 'K6a3' --verbose 1
+    Specify some upper bounds                   : test_ribbon.py --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
+    Tries each knot 10 times                    : test_ribbon.py --links 'K6a3' --max-tries 10
+    Check sliceness obstructions for added bands: test_ribbon.py --links 'K6a3' --use-checks
+    Save bands as eps files                     : test_ribbon.py --links 'K6a3' --save-images
+    Prioritize attach, do not twist, try forever: test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
     '''
-    parser = argparse.ArgumentParser(description='Check for sliceness using a random walk to construct the bands.', epilog=example_usage, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(description='Check for ribbonness using a random walk to construct the bands.', epilog=example_usage, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--file', help='path to file with link info to process. One line per link (can specify name, PD code, or braid word)')
     parser.add_argument('--links', nargs='*', help='sequence of links, either given by their names or as a list of PD codes (separated by spaces)')
     parser.add_argument('--max-bands', default=5, type=int, help='max number of bands/twists/components (we use the same upper bound for all of these instead of allowing for individual upper bounds) that should be tried to add. Default: 5')
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     parser.add_argument('--use-checks', default=False, action='store_true', help='if flag is set, will check for slice obstructions (signature, alexander poly, fox-milnor,...). This requires sage')
     parser.add_argument('--save-images', default=False, action='store_true', help='if flag is set, a set of images for each ribbon knot is saved (to the same directory as this script) that shows which bands were added.')
     parser.add_argument('--verbose', default=1, type=int, help='verbosity level: \'0\': only crucial info, \'1\': some info, \'2\': a lot of info, \'3\': everything (probably too much). Default: 1')
-    parser.add_argument('--weights', default="[1.,17.,1.,1.,3.]", type=str, help='specify relative probabilities for sampling the actions [start, attach, over, under, twist]. Need not be normalized to 1. Default: "[1.,17.,1.,1.,3.]", i.e., which was found to work well by Bayesian optimization')
+    parser.add_argument('--weights', default="[1.,17.,1.,1.,3.]", type=str, help='specify relative probabilities for sampling the actions [start, attach, over, under, twist]. Need not be normalized to 1. Default: \'[1.,17.,1.,1.,3.]\', which was found to work well')
     args = parser.parse_args()
 
     args.max_bands = int(args.max_bands)

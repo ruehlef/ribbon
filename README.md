@@ -60,7 +60,7 @@ If you have Sage installed and followed the steps to install it for usage with S
 Sage is only needed if you run the code with the ```--use-checks``` options, which checks the Fox-Milnor condition, which requires computing the Alexander polynomial in snappy, which in turn requires sage.
 
 ### Python notebook
-If you prefer to work with a ipython notebook (either within python or sage), you can look at [test_ribbon.ipynb](/examples/test_ribbon.ipynb)
+If you prefer to work with a ipython notebook (either within python or sage), you can look at [test_ribbon.ipynb](/examples/ribbon_example.ipynb)
 
 ## Output 
 Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [knot plot](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:

@@ -54,7 +54,7 @@ if __name__ == "__main__":
     parser.add_argument('--use-checks', default=False, action='store_true', help='if flag is set, will check for slice obstructions (signature, alexander poly, fox-milnor,...). This requires sage')
     parser.add_argument('--save-images', default=False, action='store_true', help='if flag is set, a set of images for each ribbon knot is saved (to the same directory as this script) that shows which bands were added.')
     parser.add_argument('--verbose', default=1, type=int, help='verbosity level: \'0\': only crucial info, \'1\': some info, \'2\': a lot of info, \'3\': everything (probably too much). Default: 1')
-    parser.add_argument('--weights', default="[0.25,0.85,0.05,0.05,0.15]", type=str, help='specify relative probabilities for sampling the actions [start, attach, over, under, twist]. Need not be normalized to 1. Default: "[0.25,0.85,0.05,0.05,0.15]", i.e. uniform sampling')
+    parser.add_argument('--weights', default="[1.,17.,1.,1.,3.]", type=str, help='specify relative probabilities for sampling the actions [start, attach, over, under, twist]. Need not be normalized to 1. Default: "[1.,17.,1.,1.,3.]", i.e., which was found to work well by Bayesian optimization')
     args = parser.parse_args()
 
     args.max_bands = int(args.max_bands)

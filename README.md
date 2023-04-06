@@ -20,7 +20,7 @@ B: Standard: Use this if you want to know a bit more background on what the code
 
 ### A: I can't be bothered
 1. You will need to open a terminal. On Mac, press command and space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
-2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ``Python 3.8``` or similar, ask someone to install python 3.8 for you. 
+2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 
 2.b. If you want to use sage, type ```sage -v```. If the output is not  ```SageMath 9.5``` or similar, ask someone to install sage.
 3.a. If you want to use python, copy the line below and press enter
 ```console

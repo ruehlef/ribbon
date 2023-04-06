@@ -9,17 +9,47 @@ The python package ribbon provides code that searches for ribbon bands in knots 
 - We provide many options for customizing the search
 
 ## Installation
-This guide assumes that you have a working Python 3 (preferably python 3.8 or above) installation (and optionally Sage, if you want to use some features from snappy that require sage). It is assumed that running ```python3``` works on your system and runs python 3.8 or above.  Moreover, it is assumed that you have installed git. Note that both are standard on Mac and most Linux distributions. 
+This guide assumes that you have a working Python 3 (version 3.8, 3.9, or 3.10) installation (and optionally Sage, if you want to use some features from snappy that require sage). It is assumed that running ```python3``` or ```sage``` works on your system and runs python 3.8 or above.  Moreover, it is assumed that you have installed git. Note that both are standard on Mac and most Linux distributions. 
 
 *NOTE*: At the moment, the code is still closed source, which means that it ships with a Cython binary. I have compiled one version for Python 3.8-3.10 with a Macbook with an M1 chip and one with Ubuntu 22.04LTS. 
 
-### 1. Installation with Python
-If you want to use any existing python installation (note that we recommend using a virtual environment, see below), just run in a terminal
+We describe the installation progress at two levels:
+A: I can't be bothered: Use that if you just want to try the code on some knot (given in terms of a PD code) and you are not familiar/ comfortable with using the terminal
+
+B: Standard: Use this if you want to know a bit more background on what the code can do and what you are actually installing
+
+### A: I can't be bothered
+1. You will need to open a terminal. On Mac, press command and space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
+2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ``Python 3.8``` or similar, ask someone to install python 3.8 for you. 
+2.b. If you want to use sage, type ```sage -v```. If the output is not  ```SageMath 9.5``` or similar, ask someone to install sage.
+3.a. If you want to use python, copy the line below and press enter
 ```console
-pip install git+https://github.com/ribbon/ribbon.git
+pip install --user git+https://github.com/ribbon/ribbon.git
+```
+3.b. If you want to use sage, you need to start it first by typing ```sage``` and pressing enter. Next copy the line 
+```console
+pip install --user git+https://github.com/ribbon/ribbon.git
+```
+and press enter. Once this is done, type ```exit``` and press enter
+4. Download [this file](/examples/test_ribbon.py).
+5.a. If you want to use python, run 
+```console
+python test_ribbon.py --links 'K6a3' --save-images --max-tries -1 
+```
+Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
+```console
+python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries -1 
+```
+5.b. If you want to use python, run 
+```console
+sage test_ribbon.py --links 'K6a3' --save-images --max-tries -1 
+```
+Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
+```console
+python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries -1 
 ```
 
-### 2. Install with virtual environment
+### B: Standard
 Create a new virtual environment in a terminal with
 
 ```console
@@ -27,7 +57,6 @@ python3 -m venv ~/venv-ribbon
 ```
 
 Then install with pip directly from github 
-
 ```console
 source ~/venv-ribbon/bin/activate
 pip install --upgrade pip
@@ -40,8 +69,7 @@ pip install jupyter notebook
 python -m ipykernel install --user --name=ribbon-venv
 ```
 
-### 3. Install within Sage
-Since Sage comes with python, all you need to do is run 
+Since Sage comes with python,  you can easily install the code for sage. All you need to do is run 
 ```console
 pip install git+https://github.com/ribbon/ribbon.git
 ```

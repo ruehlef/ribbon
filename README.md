@@ -20,18 +20,24 @@ B: Standard: Use this if you want to know a bit more background on what the code
 
 ### A: I can't be bothered
 1. You will need to open a terminal. On Mac, press command and space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
+
 2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 
+
 2.b. If you want to use sage, type ```sage -v```. If the output is not  ```SageMath 9.5``` or similar, ask someone to install sage.
+
 3.a. If you want to use python, copy the line below and press enter
 ```console
 pip install --user git+https://github.com/ribbon/ribbon.git
 ```
+
 3.b. If you want to use sage, you need to start it first by typing ```sage``` and pressing enter. Next copy the line 
 ```console
 pip install --user git+https://github.com/ribbon/ribbon.git
 ```
 and press enter. Once this is done, type ```exit``` and press enter
+
 4. Download [this file](/examples/test_ribbon.py).
+
 5.a. If you want to use python, run 
 ```console
 python test_ribbon.py --links 'K6a3' --save-images --max-tries -1 
@@ -40,6 +46,7 @@ Wait until it finds a band (it will telly you and stop), or just close the termi
 ```console
 python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries -1 
 ```
+
 5.b. If you want to use python, run 
 ```console
 sage test_ribbon.py --links 'K6a3' --save-images --max-tries -1 

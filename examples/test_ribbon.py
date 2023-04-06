@@ -36,15 +36,15 @@ def parse_string_array(links):
 
 
 if __name__ == "__main__":
-    example_usage = '''Example:
-    Find a band of link K6a3 (Stevedore)        : test_ribbon.py --links 'K6a3' --verbose 1
-    Specify some upper bounds                   : test_ribbon.py --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
-    Tries each knot 10 times                    : test_ribbon.py --links 'K6a3' --max-tries 10
-    Check sliceness obstructions for added bands: test_ribbon.py --links 'K6a3' --use-checks
-    Save bands as eps files                     : test_ribbon.py --links 'K6a3' --save-images
-    Prioritize attach, do not twist, try forever: test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
+    example_usage = '''Example (replace \'python3\' by \'sage\' at the beginning of each command to use sage instead):
+    Find a band of link K6a3 (Stevedore)        : python3 test_ribbon.py --links 'K6a3' --verbose 1
+    Specify some upper bounds                   : python3 test_ribbon.py --links 'K6a3' --max-bands 5 --max-size 20 --max-steps 100
+    Tries each knot 10 times                    : python3 test_ribbon.py --links 'K6a3' --max-tries 10
+    Check sliceness obstructions for added bands: python3 test_ribbon.py --links 'K6a3' --use-checks
+    Save bands as eps files                     : python3 test_ribbon.py --links 'K6a3' --save-images
+    Prioritize attach, do not twist, try forever: python3 test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
     '''
-    parser = argparse.ArgumentParser(description='Check for ribbonness using a random walk to construct the bands.', epilog=example_usage, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(description='Check for ribbonness using a random walk to construct the bands. Note that all arguments should be entered in single quotes \'\'.', epilog=example_usage, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--file', help='path to file with link info to process. One line per link (can specify name, PD code, or braid word)')
     parser.add_argument('--links', nargs='*', help='sequence of links, either given by their names or as a list of PD codes (separated by spaces)')
     parser.add_argument('--max-bands', default=5, type=int, help='max number of bands/twists/components (we use the same upper bound for all of these instead of allowing for individual upper bounds) that should be tried to add. Default: 5')

@@ -71,7 +71,7 @@ Besides the text / logging output, the code can visualize the band. The algorith
 * t+-:   Indicates that the band is twisted (either a positive or a negative twist)
 * a#:    Indicates that the band is attached at the strand that is crossed when leaving the current region and entering the region indicated by the number following a
 
-For the example [knot plot](/assets/stevedore.png), this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6.
+For the [example knot](/assets/stevedore.png) shown at the top of the page, this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6.
 
 ## Advanced: Working directly with the compiled code
 The main class is the RandomWalker class. At the moment, it is closed source, but we will open source it soon. It takes the following arguments:

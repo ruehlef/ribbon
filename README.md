@@ -36,9 +36,9 @@ B: Standard: Use this if you want to know a bit more background on what the code
 1. You will need to open a terminal. On Mac, press command + space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
 
 2. Check that your system meets the requirements (it usually does)
-	a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 
+	1. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 
 
-	b. If you want to use sage, type ```sage -v```. If the output is not  ```SageMath 9.5``` or similar, ask someone to install sage.
+	2. If you want to use sage, type ```sage -v```. If the output is not  ```SageMath 9.5``` or similar, ask someone to install sage.
 
 3. Install the package
 	1. If you want to use python, copy the line below and press enter
@@ -55,24 +55,23 @@ B: Standard: Use this if you want to know a bit more background on what the code
 4. Download [this file](/examples/test_ribbon.py).
 
 5. Run the code
+	1. If you want to use python, run 
+	```console
+	python test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
+	```
+	Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
+	```console
+	python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
+	```
 
-	a. If you want to use python, run 
-```console
-python test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
-```
-Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
-```console
-python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
-```
-
-	b. If you want to use sage, run 
-```console
-sage test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
-```
-Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
-```console
-python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
-```
+	2. If you want to use sage, run 
+	```console
+	sage test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
+	```
+	Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
+	```console
+	python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
+	```
 
 ### B: Standard
 Create a new virtual environment in a terminal with

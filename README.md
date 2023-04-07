@@ -5,8 +5,7 @@ The python package ribbon provides code that searches for ribbon bands in knots 
 </p>
 
 
-Table of Contents
-=================
+## Table of Contents
 * [Features](#Features)
 * [Installation](#Installation)
 	* [A: I can't be bothered](#A-I-cant-be-bothered)

@@ -26,14 +26,14 @@ This guide assumes that you have a working Python 3 (version 3.8, 3.9, or 3.10) 
 
 *NOTE*: At the moment, the code is still closed source, which means that it ships with a Cython binary. I have compiled one version for Python 3.8-3.10 with a Macbook with an M1 chip and one with Ubuntu 22.04LTS. 
 
-We describe the installation progress at two levels:
+We describe the installation progress at two difficulty levels:
 
-A: I cannot be bothered: Use that if you just want to try the code on some knot (given in terms of a PD code) and you are not familiar/ comfortable with using the terminal
+A: I cannot be bothered: Use that if you just want to try the code on some knot (given in terms of a PD code) and you are not familiar/comfortable with using the terminal
 
 B: Standard: Use this if you want to know a bit more background on what the code can do and what you are actually installing
 
 ### A: I can't be bothered
-1. You will need to open a terminal. On Mac, press command and space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
+1. You will need to open a terminal. On Mac, press command + space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
 
 2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 
 
@@ -61,7 +61,7 @@ Wait until it finds a band (it will telly you and stop), or just close the termi
 python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
 ```
 
-5.b. If you want to use python, run 
+5.b. If you want to use sage, run 
 ```console
 sage test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
 ```
@@ -98,19 +98,23 @@ from within sage (either the command line interface or in a notebook).
 
 ## Examples
 
-We provide two examples for how to use the code. One is a command line tool, and one is a (Python) notebook.
+Once you have installed the package (either in python or sage), you are ready to use the code. We provide two examples for how to use it. One is a command line tool, and one is a (Python) notebook.
 
 
 ### Python notebook
-If you prefer to work with a ipython notebook (either within python or sage), you can look at [ribbon_example.ipynb](/examples/ribbon_example.ipynb)
+If you prefer to work with an ipython notebook (either within python or sage), download and open [ribbon_example.ipynb](/examples/ribbon_example.ipynb) by running
+```console
+jupyter notebook ribbon_example.ipynb
+```
+The notebook contains the most likely use cases (search for ribbon knots using a random walk; it also shows how to easily parallelize the search to speed up finding a band for a single knot or to process multiple knots in parallel).
 
 ### Command line tool
-Once you have installed the package (either in python or sage), you are ready to use the code. The file [test_ribbon.py](/examples/test_ribbon.py) provides basic functionality for that. To see the different options available and some examples, download the file and run it with 
+The file [test_ribbon.py](/examples/test_ribbon.py) provides basic functionality for searching for ribbons. To see the different options available and some examples, download the file and run it with 
 ```python test_ribbon.py --help```
 
 If you have Sage installed and followed the steps to install it for usage with Sage outlined above, you could run instead
-```sage test_ribbon.py --help```
-Sage is only needed if you run the code with the ```--use-checks``` options, which checks the Fox-Milnor condition, which requires computing the Alexander polynomial in snappy, which in turn requires sage.
+```sage test_ribbon.py --help```.
+Sage is only needed if you run the code with the ```--use-checks``` options, which checks the Fox-Milnor condition. This requires computing the Alexander polynomial in snappy, which in turn requires sage.
 
 In either case, you will see the following:
 ```console
@@ -145,9 +149,9 @@ Example (replace 'python3' by 'sage' at the beginning of each command to use sag
 ## Output 
 Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [knot plot](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:
 
-* s# a#: indicates that the band is started on the strand that is crossed when going from the region indicated by the number that follows s to the region indicated by the number that follows a (these are acropnyms for "start" and "attach")
+* s# a#: indicates that the band is started on the strand that is crossed when going from the region indicated by the number that follows s to the region indicated by the number that follows a (these are acronyms for "start" and "attach")
 * o#:    Indicates that the band is moved from the current region into the next region by crossing over the strand that is encountered
-* u#:    Indicates that the band is moved from the current region into the next region by crossing over the strand that is encountered
+* u#:    Indicates that the band is moved from the current region into the next region by crossing under the strand that is encountered
 * t+-:   Indicates that the band is twisted (either a positive or a negative twist)
 * a#:    Indicates that the band is attached at the strand that is crossed when leaving the current region and entering the region indicated by the number following a
 
@@ -167,4 +171,4 @@ Args:
 Returns:
     A new RandomWalker class instance
 ```
-From this class, you essentially only need the ```invalid_action_mask()``` and ```step(action)``` methods. The former returns a list, which contains a 1 for actions that are valid in the current state and a 0 for actions that are invalid. You can then choose randomly (or in an informed way, if you know which band you want to construct) an action and perform it using the ```step``` method. The step function will return a bool indicating whether it is resetting the knot. The reason for the reset is given in the second argument.
+From this class, you essentially only need the ```invalid_action_mask()``` and ```step(action)``` methods. The former returns a list, which contains a 1 for actions that are valid in the current state and a 0 for actions that are invalid. You can then choose randomly (or in an informed way, if you know which band you want to construct) an action and perform it using the ```step``` method. The step function expects an integer indicating the action and will return a bool indicating whether it is resetting the knot. The reason for the reset is given in the second argument.

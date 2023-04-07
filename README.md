@@ -86,7 +86,11 @@ from within sage (either the command line interface or in a notebook).
 
 We provide two examples for how to use the code. One is a command line tool, and one is a (Python) notebook.
 
-### Command line
+
+### Python notebook
+If you prefer to work with a ipython notebook (either within python or sage), you can look at [ribbon_example.ipynb](/examples/ribbon_example.ipynb)
+
+### Command line tool
 Once you have installed the package (either in python or sage), you are ready to use the code. The file [test_ribbon.py](/examples/test_ribbon.py) provides basic functionality for that. To see the different options available and some examples, download the file and run it with 
 ```python test_ribbon.py --help```
 
@@ -123,9 +127,6 @@ Example (replace 'python3' by 'sage' at the beginning of each command to use sag
     Save bands as eps files                     : python3 test_ribbon.py --links 'K6a3' --save-images
     Prioritize attach, do not twist, try forever: python3 test_ribbon.py --links 'K6a3' --weights '[1,3,1,1,0]' --max-tries '-1'
 ```
-
-### Python notebook
-If you prefer to work with a ipython notebook (either within python or sage), you can look at [ribbon_example.ipynb](/examples/ribbon_example.ipynb)
 
 ## Output 
 Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [knot plot](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:

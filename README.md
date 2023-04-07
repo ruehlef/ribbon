@@ -9,11 +9,11 @@ Table of Contents
 =================
 * [Features](#Features)
 * [Installation](#Installation)
-	* [A: I can't be bothered:](#A: I can't be bothered)
-	* [B: Standard](#B: Standard)
+	* [A: I cannot be bothered](#I-cannot-be-bothered)
+	* [B: Standard](#Standard)
 * [Examples](#Examples)
-	* [Python notebook](#Python notebook)
-	* [Command line tool](#Command line tool)
+	* [Python notebook](#Python-notebook)
+	* [Command line tool](#Command-line-tool)
 * [Output](#Output)
 * [Advanced: Working directly with the compiled code](#Advanced: Working directly with the compiled code)
 
@@ -29,11 +29,11 @@ This guide assumes that you have a working Python 3 (version 3.8, 3.9, or 3.10) 
 
 We describe the installation progress at two levels:
 
-A: I can't be bothered: Use that if you just want to try the code on some knot (given in terms of a PD code) and you are not familiar/ comfortable with using the terminal
+A: I cannot be bothered: Use that if you just want to try the code on some knot (given in terms of a PD code) and you are not familiar/ comfortable with using the terminal
 
 B: Standard: Use this if you want to know a bit more background on what the code can do and what you are actually installing
 
-### A: I can't be bothered
+### A: I cannot be bothered
 1. You will need to open a terminal. On Mac, press command and space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
 
 2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 

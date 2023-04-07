@@ -57,11 +57,11 @@ B: Standard: Use this if you want to know a bit more background on what the code
 5. Run the code
 	1. If you want to use python, run 
 	```console
-	python test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
+	python3 test_ribbon.py --links 'K6a3' --save-images --max-tries '-1'
 	```
 	Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
 	```console
-	python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
+	python3 test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
 	```
 
 	2. If you want to use sage, run 
@@ -70,7 +70,7 @@ B: Standard: Use this if you want to know a bit more background on what the code
 	```
 	Wait until it finds a band (it will telly you and stop), or just close the terminal window when you want to stop. You should replace 'K6a3' by the name of the knot you want to try, or by its PD code, so e.g.
 	```console
-	python test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
+	python3 test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
 	```
 
 ### B: Standard
@@ -113,7 +113,7 @@ The notebook contains the most likely use cases (search for ribbon knots using a
 
 ### Command line tool
 The file [test_ribbon.py](/examples/test_ribbon.py) provides basic functionality for searching for ribbons. To see the different options available and some examples, download the file and run it with 
-```python test_ribbon.py --help```
+```python3 test_ribbon.py --help```
 
 If you have Sage installed and followed the steps to install it for usage with Sage outlined above, you could run instead
 ```sage test_ribbon.py --help```.

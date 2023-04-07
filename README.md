@@ -41,16 +41,16 @@ B: Standard: Use this if you want to know a bit more background on what the code
 	b. If you want to use sage, type ```sage -v```. If the output is not  ```SageMath 9.5``` or similar, ask someone to install sage.
 
 3. Install the package
-	a. If you want to use python, copy the line below and press enter
-```console
-pip install --user git+https://github.com/ribbon/ribbon.git
-```
+	1. If you want to use python, copy the line below and press enter
+	```console
+	pip install --user git+https://github.com/ribbon/ribbon.git
+	```
 
-	b. If you want to use sage, you need to start it first by typing ```sage``` and pressing enter. Next copy the line 
-```console
-pip install git+https://github.com/ribbon/ribbon.git
-```
-and press enter. Once this is done, type ```exit``` and press enter
+	2. If you want to use sage, you need to start it first by typing ```sage``` and pressing enter. Next copy the line 
+	```console
+	pip install git+https://github.com/ribbon/ribbon.git
+	```
+	and press enter. Once this is done, type ```exit``` and press enter
 
 4. Download [this file](/examples/test_ribbon.py).
 

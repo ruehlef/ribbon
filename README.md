@@ -43,12 +43,12 @@ B: Standard: Use this if you want to know a bit more background on what the code
 3. Install the package
 	1. If you want to use python, copy the line below and press enter
 	```console
-	pip install --user git+https://github.com/ribbon/ribbon.git
+	pip install --user git+https://github.com/ruehlef/ribbon/ribbon.git
 	```
 
 	2. If you want to use sage, you need to start it first by typing ```sage``` and pressing enter. Next copy the line 
 	```console
-	pip install git+https://github.com/ribbon/ribbon.git
+	pip install git+https://github.com/ruehlef/ribbon/ribbon.git
 	```
 	and press enter. Once this is done, type ```exit``` and press enter
 
@@ -84,7 +84,7 @@ Then install with pip directly from github
 ```console
 source ~/venv-ribbon/bin/activate
 pip install --upgrade pip
-pip install git+https://github.com/ribbon/ribbon.git
+pip install git+https://github.com/ruehlef/ribbon/ribbon.git
 ```
 
 If you want to use the jupyter notebook, you need to install it and add the virtual environment as a kernel
@@ -95,7 +95,7 @@ python -m ipykernel install --user --name=ribbon-venv
 
 Since Sage comes with python,  you can easily install the code for sage. All you need to do is run 
 ```console
-pip install git+https://github.com/ribbon/ribbon.git
+pip install git+https://github.com/ruehlef/ribbon/ribbon.git
 ```
 from within sage (either the command line interface or in a notebook).
 

@@ -1,9 +1,21 @@
 # Find ribbon bands
 The python package ribbon provides code that searches for ribbon bands in knots or links. Below is an example for the first ribbon knot, the Stevedore knot.
 <p align="center">
-<img src="https://github.com/ruehlef/ribbon/tree/main/assets/stevedore.png" width=50%/>
+<img src="https://github.com/ruehlef/ribbon/tree/main/assets/stevedore.png" width=30%/>
 </p>
 
+
+Table of Contents
+=================
+* [Features](#Features)
+* [Installation](#Installation)
+	* [A: I can't be bothered:](#A: I can't be bothered)
+	* [B: Standard](#B: Standard)
+* [Examples](#Examples)
+	* [Python notebook](#Python notebook)
+	* [Command line tool](#Command line tool)
+* [Output](#Output)
+* [Advanced: Working directly with the compiled code](#Advanced: Working directly with the compiled code)
 
 ## Features
 - Randomly tries to attach bands and simplify the resulting link until the unknot is reached, which proves that the link is ribbon

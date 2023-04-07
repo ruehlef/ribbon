@@ -9,13 +9,13 @@ Table of Contents
 =================
 * [Features](#Features)
 * [Installation](#Installation)
-	* [A: I cannot be bothered](#I-cannot-be-bothered)
-	* [B: Standard](#Standard)
+	* [A: I can't be bothered](#A-I-cannot-be-bothered)
+	* [B: Standard](#B-Standard)
 * [Examples](#Examples)
 	* [Python notebook](#Python-notebook)
 	* [Command line tool](#Command-line-tool)
 * [Output](#Output)
-* [Advanced: Working directly with the compiled code](#Advanced: Working directly with the compiled code)
+* [Advanced: Working directly with the compiled code](#Advanced-working-directly-with-the-compiled-code)
 
 ## Features
 - Randomly tries to attach bands and simplify the resulting link until the unknot is reached, which proves that the link is ribbon
@@ -33,7 +33,7 @@ A: I cannot be bothered: Use that if you just want to try the code on some knot 
 
 B: Standard: Use this if you want to know a bit more background on what the code can do and what you are actually installing
 
-### A: I cannot be bothered
+### A: I can't be bothered
 1. You will need to open a terminal. On Mac, press command and space simultaneously, type terminal, and hit enter. On Linux, press Ctrl + Alt + T.
 
 2.a. If you want to use python, enter ```python3 --version``` and press enter. If the output is not ```Python 3.8``` or similar, ask someone to install python 3.8 for you. 

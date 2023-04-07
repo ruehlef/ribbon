@@ -1,6 +1,6 @@
 # Find ribbon bands
 The python package ribbon provides code that searches for ribbon bands in knots or links. Below is an example for the first ribbon knot, the Stevedore knot.
-![Ribbon plots](/assets/stevedore.png = 100x100)
+![Ribbon plots](/assets/stevedore.png)
 
 
 ## Features

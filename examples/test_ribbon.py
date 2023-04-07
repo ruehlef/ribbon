@@ -5,8 +5,8 @@ import snappy
 import numpy as np
 import logging
 import argparse
-# import ribbon.rw
-# import ribbon.visualizer as visualizer
+import ribbon.rw
+import ribbon.visualizer as visualizer
 
 def init_logger(log_level):
     logger = logging.getLogger('RandomWalker')
@@ -166,9 +166,9 @@ if __name__ == "__main__":
             logger.error("Finished all links")
             break
 
-    # This is not an error, just want to print summary irrespective of verbosity
-    logger.error("\n####################################################################################################")
-    logger.error("Summary:")
-    logger.error("Succeeded {} times for: {}".format(success, succeeded))
-    logger.error("Failed    {} times for: {}".format(len(my_links) - success, failed))
-    logger.error("####################################################################################################")
+    logger.setLevel(logging.INFO)
+    logger.info("\n####################################################################################################")
+    logger.info("Summary:")
+    logger.info("Succeeded {} times for: {}".format(success, succeeded))
+    logger.info("Failed    {} times for: {}".format(len(my_links) - success, failed))
+    logger.info("####################################################################################################")

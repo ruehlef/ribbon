@@ -52,7 +52,7 @@ B: Standard: Use this if you want to know a bit more background on what the code
 	```
 	and press enter. Once this is done, type ```exit``` and press enter
 
-4. Download [this file](/examples/test_ribbon.py).
+4. Download [this file](/examples/test_ribbon.py "download").
 
 5. Run the code
 	1. If you want to use python, run 

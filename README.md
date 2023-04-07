@@ -150,7 +150,7 @@ Example (replace 'python3' by 'sage' at the beginning of each command to use sag
 ```
 
 ## Output 
-Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. An example output is shown in [knot plot](/assets/stevedore.png). The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:
+Besides the text / logging output, the code can visualize the band. The algorithm works by operating on the dual graph, hence the band description is given in terms of the dual graph as well. As an example we will look at the program output for the Stevedore knot shown on top of the page and repeated below in the left figure. The output will always be of the form with s# a# ... a#. Here is a short explanation for how to read the output:
 
 * s# a#: indicates that the band is started on the strand that is crossed when going from the region indicated by the number that follows s to the region indicated by the number that follows a (these are acronyms for "start" and "attach")
 * o#:    Indicates that the band is moved from the current region into the next region by crossing over the strand that is encountered
@@ -158,7 +158,13 @@ Besides the text / logging output, the code can visualize the band. The algorith
 * t+-:   Indicates that the band is twisted (either a positive or a negative twist)
 * a#:    Indicates that the band is attached at the strand that is crossed when leaving the current region and entering the region indicated by the number following a
 
-For the [example knot](/assets/stevedore.png) shown at the top of the page, this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6.
+<p align="center">
+<img src="assets/band_addition.png" width=100%/>
+</p>
+
+For the Stevedore knot, this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6. This is all that the code ouputs. We have illustrated the band in the middle of the figure.
+
+From there, Reidemeister moves (as indicated  on the right) will show that the band produced two unlinked unknots (we have colored the two link components red and blue), which proves that the Steverdore knot is ribbon (and hence slice).
 
 ## Advanced: Working directly with the compiled code
 The main class is the RandomWalker class. At the moment, it is closed source, but we will open source it soon. It takes the following arguments:

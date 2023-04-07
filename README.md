@@ -1,6 +1,8 @@
 # Find ribbon bands
 The python package ribbon provides code that searches for ribbon bands in knots or links. Below is an example for the first ribbon knot, the Stevedore knot.
-![Ribbon plots](/assets/stevedore.png)
+<center>
+<img src="https://github.com/ruehlef/ribbon/tree/main/assets/stevedore.png" width=50%/>
+</center>
 
 
 ## Features
@@ -14,6 +16,7 @@ This guide assumes that you have a working Python 3 (version 3.8, 3.9, or 3.10) 
 *NOTE*: At the moment, the code is still closed source, which means that it ships with a Cython binary. I have compiled one version for Python 3.8-3.10 with a Macbook with an M1 chip and one with Ubuntu 22.04LTS. 
 
 We describe the installation progress at two levels:
+
 A: I can't be bothered: Use that if you just want to try the code on some knot (given in terms of a PD code) and you are not familiar/ comfortable with using the terminal
 
 B: Standard: Use this if you want to know a bit more background on what the code can do and what you are actually installing

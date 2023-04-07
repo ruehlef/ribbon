@@ -9,7 +9,7 @@ Table of Contents
 =================
 * [Features](#Features)
 * [Installation](#Installation)
-	* [A: I can't be bothered](#A-I-cannot-be-bothered)
+	* [A: I can't be bothered](#A-I-cant-be-bothered)
 	* [B: Standard](#B-Standard)
 * [Examples](#Examples)
 	* [Python notebook](#Python-notebook)

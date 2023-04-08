@@ -52,7 +52,7 @@ B: Standard: Use this if you want to know a bit more background on what the code
 	```
 	and press enter. Once this is done, type ```exit``` and press enter
 
-4. Download <a href="https://github.com/ruehlef/ribbon/raw/main/examples/test_ribbon.py">this file</a>.
+4. Download <a href="https://github.com/ruehlef/ribbon/raw/main/examples/test_ribbon.py">this file</a> (after following the link, click on File->Save as... and download the file to your home directory).
 
 5. Run the code
 	1. If you want to use python, run 

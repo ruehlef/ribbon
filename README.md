@@ -72,6 +72,11 @@ B: Standard: Use this if you want to know a bit more background on what the code
 	```console
 	python3 test_ribbon.py --links '[[2, 0, 3, 11], [0, 7, 1, 8], [6, 1, 7, 2], [10, 4, 11, 3], [4, 10, 5, 9], [8, 6, 9, 5]]' --save-images --max-tries '-1'
 	```
+This is what it should look like
+<p align="center">
+<img src="assets/installation.gif" width=100%/>
+</p>
+
 
 ### B: Standard
 Create a new virtual environment in a terminal with

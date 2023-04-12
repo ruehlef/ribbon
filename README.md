@@ -174,7 +174,7 @@ For the Stevedore knot, this means that a band is started at the horizontal stra
 <p align="center">
 <img src="assets/sym.png" width=40%/><img src="assets/unsym.png" width=40%/>
 </p>
-We use two different methods (called SYM and UNSYM) for generating ribbon knots, which we explain in more detail in the paper. For testing and training the algorithm, we generated 200 knots per crossing for a range of 15-70 crossings using either method. We provide the knots we generated in (tab-separated) csv files (<a href="db/sym.csv">SYM</a>,  <a href="db/unsym.csv">UNSYM</a>).
+We use two different methods (called SYM and UNSYM) for generating ribbon knots, which we explain in more detail in the paper. For testing and training the algorithm, we generated 200 knots per crossing for a range of 15-70 crossings using either method. We provide the knots we generated in (tab-separated) <a href="db>csv files</a>).
 
 ## Advanced: Working directly with the compiled code
 The main class is the RandomWalker class. At the moment, it is closed source, but we will open source it soon. It takes the following arguments:

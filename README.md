@@ -14,7 +14,7 @@ The python package ribbon provides code that searches for ribbon bands in knots 
 	* [Python notebook](#Python-notebook)
 	* [Command line tool](#Command-line-tool)
 * [Output](#Output)
-* [Ribbon Knot examples](#Ribbob-Knot-Examples)
+* [Ribbon Knot examples](#Ribbon-Knot-Examples)
 * [Advanced: Working directly with the compiled code](#Advanced-working-directly-with-the-compiled-code)
 
 ## Features

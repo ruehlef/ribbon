@@ -14,6 +14,7 @@ The python package ribbon provides code that searches for ribbon bands in knots 
 	* [Python notebook](#Python-notebook)
 	* [Command line tool](#Command-line-tool)
 * [Output](#Output)
+* [Ribbon Knot examples](#Ribbob-Knot-Examples)
 * [Advanced: Working directly with the compiled code](#Advanced-working-directly-with-the-compiled-code)
 
 ## Features
@@ -168,6 +169,12 @@ Besides the text / logging output, the code can visualize the band. The algorith
 </p>
 
 For the Stevedore knot, this means that a band is started at the horizontal strand between regions 1 and 2, moves through region 2 where a positive twist is inserted, and then gets attached at the strand in the middle of the knot that separates regions 2 and 6. The left figure is all that the code produces, and we have added the middle and right figure for illustration pruposes by hand. In the middle figure, we illustrate the band found by the code in green. From there, Reidemeister moves (as indicated  on the right) will show that the band produced two unlinked unknots (we have colored the two link components red and blue), which proves that the Steverdore knot is ribbon (and hence slice).
+
+## Ribbon Knot examples
+<p align="center">
+<img src="assets/sym.png" width=40%/><img src="assets/unsym.png" width=40%/>
+</p>
+We use two different methods (called SYM and UNSYM) for generating ribbon knots, which we explain in more detail in the paper. For testing and training the algorithm, we generated 200 knots per crossing for a range of 15-70 crossings using either method. We provide the knots we generated in (tab-separated) csv files [here](/db).
 
 ## Advanced: Working directly with the compiled code
 The main class is the RandomWalker class. At the moment, it is closed source, but we will open source it soon. It takes the following arguments:

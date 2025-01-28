@@ -12,7 +12,7 @@ with open("requirements.txt", "r") as fh:
 setuptools.setup(
     name="ribbon",
     version=VERSION,
-    python_requires = '>=3.8,<3.11',
+    python_requires = '>=3.8,<=3.12',
     author="Sergei Gukov, Jim Halverson, Ciprian Manolescu, Fabian Ruehle",
     author_email="f.ruehle@northeastern.edu",
     description="A python program that detects ribbon knots",
